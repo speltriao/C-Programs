@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <dirent.h>
 #define limite 1000
 #define true 1
@@ -14,13 +15,8 @@ char* get_current_dir(){ //pega o diretório atual
 }
 
 char is_music(char* string){
-    
-	if(strstr(string, ".mp3")) {
-		return true;
-	}
-    else if(strstr(string, ".m4a")) {
-		return true;
-	}
+ 
+	if((strstr(string, ".mp3"))||(strstr(string, ".m4a"))||(strstr(string,".wav"))) return true;
     else return false;
 }
 
@@ -50,7 +46,11 @@ void list_files(char* diretorio){
 
 int main(void)
 {
+    char entrada;
     list_files(get_current_dir());
-    printf("A quantidade de músicas é: %d\n",count);
+    printf("Quantidade de musicas: %d\n",count);
+    printf("Pressione Enter para continuar");
+    scanf("%c",&entrada);
+    if (entrada==10) exit(0);
     return 0;
 }
