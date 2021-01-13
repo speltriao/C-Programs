@@ -16,7 +16,7 @@ char* get_current_dir(){ //pega o diretório atual
 
 char is_music(char* string){
  
-	if((strstr(string, ".mp3"))||(strstr(string, ".m4a"))||(strstr(string,".wav"))) return true;
+    if((strstr(string, ".mp3"))||(strstr(string, ".m4a"))||(strstr(string,".wav"))) return true;
     else return false;
 }
 
